@@ -21,16 +21,16 @@ var ColorRange = new Class({
         return this;
     },
 
-    apply: function(elements) {
-        if (this.length == elements.length) {
-            elements.each(function(element, index) {
-                element.setStyle('background-color', this[index]);
-            }, this);
-            
-            return this;
-        } else {
-            return new ColorRange(this.from, this.to, elements.length).apply(elements);
+    apply: function(elements, property) {
+        if (this.length != elements.length) {
+            this.setSteps(elements.length);
         }
+
+        elements.each(function(element, index) {
+            element.setStyle(property || 'background-color', this[index]);
+        }, this);
+        
+        return this;
     }
 
 });
@@ -39,8 +39,8 @@ Color.range = function(from, to, steps) {
     return new ColorRange(from, to, steps);
 };
 
-Color.applyRange = function(from, to, elements) {
-    return new ColorRange(from, to, elements.length).apply(elements);
+Color.applyRange = function(from, to, elements, property) {
+    return new ColorRange(from, to, elements.length).apply(elements, property);
 };
 
 Color.implement({
@@ -50,8 +50,8 @@ Color.implement({
 });
 
 Elements.implement({
-    applyColorRange: function(from, to) {
-        new ColorRange(from, to, this.length).apply(this);
+    applyColorRange: function(from, to, property) {
+        new ColorRange(from, to, this.length).apply(this, property);
         return this;
     }
 });
