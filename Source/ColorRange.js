@@ -41,6 +41,7 @@ var ColorRange = new Class({
     },
 
     apply: function(elements, property) {
+        elements = $$(elements);
         if (this.length != elements.length) {
             this.setSteps(elements.length);
         }
