@@ -1,3 +1,22 @@
+/*
+---
+description: Color range utility
+
+license: MIT-style
+
+authors: akaIDIOT
+
+version: 0.1
+
+requires:
+  core/1.3: *
+  more/1.3:
+  - Utilities.Color
+
+provides: ColorRange
+...
+*/
+
 var ColorRange = new Class({
     
     Extends: Array,
