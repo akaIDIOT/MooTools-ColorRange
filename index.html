@@ -12,9 +12,31 @@
     <script type="text/javascript">
         document.addEvent('domready', function() {
             $$('#menu li').applyColorRange('#f00', '#00f');
+            
+            new ColorRange('#fff', '#000').apply('#smiles li', 'color');
+
+            $$('#blocks li').applyColorRange('#ff3', '#f33', 'background-color').applyColorRange('#000', '#fff', 'color');
         });
     </script>
     <style type="text/css">
+        ul {
+            list-style: none;
+        }
+        #menu {
+            color: #fff;
+        }
+        #menu li {
+            display: inline;
+            padding: .2em 2em;
+        }
+        #smiles li {
+            display: inline;
+            padding: .2em .4em;
+        }
+        #blocks li {
+            display: inline;
+            padding: .2em;
+        }
     </style>
 </head>
 
@@ -28,12 +50,60 @@
 
 <h2>A colorful menu</h2>
 
+<p>
+    The menu options below are created using a color range from red to blue: 
+<p>
+
+<code>$$('#menu li').applyColorRange('#f00', '#00f');</code>
+
 <ul id="menu">
     <li>Home</li>
     <li>This page</li>
     <li>That page</li>
     <li>Other things</li>
 </ul>
+
+<h2>Using different css properties</h2>
+
+<p>
+    By default, ColorRange uses the background-color property to apply the color range. With a extra argument, however, these smiles seem to fade the world into a more happy place using the following code:
+</p>
+
+<code>new ColorRange('#fff', '#000').apply('#smiles li', 'color');</code>
+
+<ul id="smiles">
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+    <li>:)</li>
+</ul>
+
+<h2>Combining multiple ranges</h2>
+
+<p>
+    The class does not track anything it does, it simply applies what you ask it to apply. So, you could combine multiple ranges for different properties if you want. The double faded list of smiles below is created using: 
+</p>
+
+<code>$$('#blocks li').applyColorRange('#ff3', '#f33', 'background-color').applyColorRange('#000', '#fff', 'color');</code>
+
+<ul id="blocks">
+    <li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li><li>:)</li>
+</li>
 
 </body>
 
