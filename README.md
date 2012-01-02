@@ -4,6 +4,8 @@ Color Range
 
 The `ColorRange` class is a simple utility that creates a range of colors to be used on elements of your choice. All you need is two colors and a selection of elements to apply a range of colors to and you're done. 
 
+ColorRange will work with MooTools 1.3 and 1.4 (without needing compatibility). 
+
 How To Use
 ----------
 
