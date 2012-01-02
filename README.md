@@ -96,6 +96,10 @@ Utility to apply a color range to an element collection.
 Changelog
 ---------
 
+### 0.2
+
+- update to MooTools 1.4 (functional code unchanged) 
+
 ### 0.1
 
 - initial release 
